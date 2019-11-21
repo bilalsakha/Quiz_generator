@@ -1,0 +1,91 @@
+h1 {
+	text-align: center;
+	margin: 2px 0 15px 0;
+}
+/*
+Implement more styles to ensure questions are displayed and printed correctly (as per the PDF file for questions and answers).
+*/
+*,*:after,*:before{@include box-sizing(border-box);}
+body{
+	margin: 0;
+	background-color: rgba(50, 115, 220, 0.3);
+	line-height: 2;
+}
+.pageHeader{
+	background-color: hsla(170, 50%, 45%, 1);
+	color: rgba(255, 255, 255, 0.856);
+	font-family: Raleway;
+	text-align: center;
+	padding: 2rem;
+}
+.actionButtons{
+	text-align: center;
+	background-color: #7a5847;
+}
+
+button{
+	font-size: 1.25rem;
+	font-family: Papyrus, monospace;
+	padding: 1rem;
+	background-color: hsla(170, 50%, 45%, 1);
+	color: #7a5847;
+	margin: 10px;
+	font-weight: bold;
+}
+.questions > li{
+	font-weight: bold;
+	font-family: Klavika, monospace;
+	border-radius: 1% ;
+	padding: 0;
+	margin: 0 5px 1rem;
+}
+
+.ansoption > li {
+	font-style: oblique;
+	color: #7a5847;
+
+}
+.options > li{
+	list-style: lower-roman;
+}
+
+@media (min-width: 1200px) {
+	#questionContainer{
+		padding-left:20%;
+		padding-right:20%;
+	}
+	.pageHeader{
+		font-size: 1.5rem;
+	}
+	.actionButtons :nth-child(1){
+		float: left;	
+	}	
+	.actionButtons :nth-child(2){
+		float: right;
+	}
+	.actionButtons{
+		padding-top:  1rem;
+		padding-bottom: 3.5rem;	
+	}
+  }
+
+/*The below media query ensures that the buttons are not visible in print */
+@media print {
+	div.actionButtons {
+		display: none !important;
+	}
+
+	#questionContainer{
+		padding: 2px;
+	}
+	.pageHeader{
+		background-color: rgba(128, 128, 128, 0.305);
+		text-align: center;
+	}
+	
+	.pageHeader h1{
+		font-size:20px;
+		border:0.5px solid rgba(128, 128, 128, 0.222);
+		padding: 0px;
+	}
+}
